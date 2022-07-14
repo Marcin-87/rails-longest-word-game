@@ -1,0 +1,12 @@
+<h1>Result</h1>
+
+<% if @characters.length.positive? %>
+      Sorry but <strong><%= params[:answer] %></strong> cant't be build out of <%= @letters.join(', ') %>
+    <% elsif @word['found'] == false %>
+      Sorry>but <strong><%= params[:answer] %></strong> does not seem to be a valid English word...
+    <% else %>
+      <strong>Congratulations!</strong> <%= params[:answer] %>  is a valid English word!
+    <% end %>
+<br>
+<br>
+<%= link_to "Play again", "new" %>
